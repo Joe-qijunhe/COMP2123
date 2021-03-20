@@ -1,5 +1,6 @@
 def summing_up(A:list) -> list:
     n = len(A)
+    #[[0] * 3] * 3是浅拷贝，里面的三个列表的内存是指向同一块，不管我们修改哪个列表，其他两个列表也会跟着改变。
     C = [[0 for i in range(n)] for j in range(n)] #new matrix n by n
     for i in range(0, n):
         for j in range(i, n):
