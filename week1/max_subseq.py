@@ -56,17 +56,18 @@ def max_subseq3(A:list) -> int:
     O(n)
     我们求的是连续和，如果现在的和是负数，无论后面加什么都会使后面的子列和变小，所以在小于0时，更新this_sum
 '''
-def max_subseq4(A:list) -> int:
-    result = 0
-    this_sum = 0
-    n = len(A)
-    for i in range(0, n):
-        this_sum = this_sum + A[i]
-        if this_sum > result:
-            result = this_sum
-        elif this_sum < 0:
-            this_sum = 0
-    return result
+#反例: [-1,-2]
+# def max_subseq4(A:list) -> int:
+#     result = 0
+#     this_sum = 0
+#     n = len(A)
+#     for i in range(0, n):
+#         this_sum = this_sum + A[i]
+#         if this_sum > result:
+#             result = this_sum
+#         elif this_sum < 0:
+#             this_sum = 0
+#     return result
 
 def main():
     print(max_subseq1([-1,3,-2,4,-6,1,6,-1]))
